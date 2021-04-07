@@ -1,0 +1,39 @@
+﻿<Window x:Class="Laba2.UpdateLog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Laba2"
+        mc:Ignorable="d"
+        Title="UpdateLog" Height="650" Width="1200">
+    <Grid>
+        <DataGrid x:Name="LogGrid" HorizontalAlignment="Left" Height="282" Margin="26,24,0,0" VerticalAlignment="Top" Width="268" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="BeforeId" Header="Было" Binding="{Binding Before.Id}"/>
+                <DataGridTextColumn x:Name="AfterId" Header="Стало" Binding="{Binding After.Id}"/>
+                <DataGridTextColumn x:Name="Status" Header="Статус" Binding="{Binding Status}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="Differences" Content="Показать изменения" HorizontalAlignment="Left" Margin="361,27,0,0" VerticalAlignment="Top" Width="170" Click="Differences_Click"/>
+        <Label Content="До:" HorizontalAlignment="Left" Margin="457,60,0,0" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.492,1.564"/>
+        <Label Content="После" HorizontalAlignment="Left" Margin="836,60,0,0" VerticalAlignment="Top"/>
+        <Label Content="Имя" HorizontalAlignment="Left" Margin="315,94,0,0" VerticalAlignment="Top" Width="65"/>
+        <Label Content="Описание" HorizontalAlignment="Left" Margin="315,147,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.297,0.757"/>
+        <Label Content="Источник" HorizontalAlignment="Left" Margin="317,280,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.297,0.757"/>
+        <Label Content="Объект воздействия" HorizontalAlignment="Left" Margin="317,310,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.297,0.757"/>
+        <TextBlock x:Name="NameBefore" HorizontalAlignment="Left" Margin="447,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="29" Width="329"/>
+        <TextBlock x:Name="NameAfter" HorizontalAlignment="Left" Margin="836,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="29" Width="325"/>
+        <TextBlock x:Name="DescriptionBefore" HorizontalAlignment="Left" Margin="447,147,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="130" Width="329"/>
+        <TextBlock x:Name="DescriptionAfter" HorizontalAlignment="Left" Margin="836,147,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="130" Width="325"/>
+        <TextBlock x:Name="SourceBefore" HorizontalAlignment="Left" Margin="447,282,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="29" Width="329"/>
+        <TextBlock x:Name="SourceAfter" HorizontalAlignment="Left" Margin="836,282,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="29" Width="325"/>
+        <TextBlock x:Name="TargetBefore" HorizontalAlignment="Left" Margin="447,316,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="29" Width="353"/>
+        <TextBlock x:Name="TargetAfter" HorizontalAlignment="Left" Margin="836,316,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="29" Width="325"/>
+        <CheckBox x:Name="ConfidBefore" Content="Нарушение конфиденциальности" HorizontalAlignment="Left" Margin="315,425,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+        <CheckBox x:Name="ConfidAfter" Content="Нарушение конфиденциальности" HorizontalAlignment="Left" Margin="836,425,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+        <CheckBox x:Name="IntegrityBefore" Content="Нарушение целостности" HorizontalAlignment="Left" Margin="317,472,0,0" VerticalAlignment="Top" IsEnabled="False" RenderTransformOrigin="-2.266,-0.211"/>
+        <CheckBox x:Name="IntegrityAfter" Content="Нарушение целостности" HorizontalAlignment="Left" Margin="836,472,0,0" VerticalAlignment="Top" IsEnabled="False" RenderTransformOrigin="-2.266,-0.211"/>
+        <CheckBox x:Name="AvailabilityBefore" Content="Нарушение доступности" HorizontalAlignment="Left" Margin="315,513,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+        <CheckBox x:Name="AvailabilityAfter" Content="Нарушение доступности" HorizontalAlignment="Left" Margin="837,513,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+    </Grid>
+</Window>

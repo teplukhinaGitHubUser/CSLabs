@@ -1,0 +1,25 @@
+﻿<Window x:Class="Laba2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Laba2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="1000">
+    <Grid>
+        <DataGrid x:Name="securityTreats" HorizontalAlignment="Left" Height="409" Margin="10,0,0,0" VerticalAlignment="Top" Width="809" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Идентификатор" Binding="{Binding Id}" Width="100"/>
+                <DataGridTextColumn Header="Наименование" Binding="{Binding Name}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Просмотр" x:Name="ShowRecord" HorizontalAlignment="Left" Margin="850,52,0,0" VerticalAlignment="Top" Width="114" Click="ShowRecord_Click"/>
+        <Button  x:Name="NextButton" Content="Next" HorizontalAlignment="Left" Margin="745,414,0,0" VerticalAlignment="Top" Width="75" Click="NextButton_Click"/>
+        <Button x:Name="PreviousButton" Content="Prev" HorizontalAlignment="Left" Margin="665,414,0,0" VerticalAlignment="Top" Width="75" Click="PreviewButton_Click"/>
+        <Label x:Name="NoDataLabel" Content="Необходима первичная загрузка данных! пожалуйста, нажмите кнопку Загрузить данные" HorizontalAlignment="Left" Margin="10,461,0,0" VerticalAlignment="Top" Width="520" Visibility="Hidden" Foreground="Red"/>
+        <Button x:Name="LoadData" Content="Загрузить данные" HorizontalAlignment="Left" Margin="850,114,0,0" VerticalAlignment="Top" Width="114" Click="LoadData_Click"/>
+        <Button x:Name="UpdateLog" Content="Лог изменений" HorizontalAlignment="Left" Margin="850,180,0,0" VerticalAlignment="Top" Width="114" Click="UpdateLog_Click"/>
+        <Button x:Name="Export" Content="Сохранить на диск" HorizontalAlignment="Left" Margin="850,247,0,0" VerticalAlignment="Top" Width="114" Click="Export_Click"/>
+
+    </Grid>
+</Window>
